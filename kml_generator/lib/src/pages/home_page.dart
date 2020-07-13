@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kml_generator/src/pages/measure_list.dart';
 import 'package:kml_generator/src/pages/options_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -10,7 +11,21 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('KML File')),
+        appBar: AppBar(
+          title: Text('KML File'),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.view_list),
+              iconSize: 32,
+              tooltip: ("Measure list"),
+              onPressed: () {
+                final route =
+                    MaterialPageRoute(builder: (context) => MeasureList());
+                Navigator.push(context, route);
+              },
+            )
+          ],
+        ),
         body: Column(children: <Widget>[
           Text(
             'Search Plot Number',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kml_generator/src/pages/distance_gps.dart';
 import 'package:kml_generator/src/pages/distance_manual.dart';
 import 'package:kml_generator/src/pages/guie_google_map_page.dart';
 //import 'package:kml_generator/src/pages/map_page.dart';
@@ -38,7 +39,8 @@ List<Widget> _options(BuildContext context) {
         ),
         RaisedButton(
           onPressed: () {
-            final route = MaterialPageRoute(builder: (context) => MapSample());
+            final route =
+                MaterialPageRoute(builder: (context) => DistanceGps());
             Navigator.push(context, route);
           },
           child: Text('GPS'),
